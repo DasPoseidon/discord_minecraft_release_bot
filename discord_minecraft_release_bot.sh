@@ -177,7 +177,23 @@ manifest_compare
 if [ $DIFF -gt 0 ] ; then
   if [ -z ${MESSAGE_CONTENT+x} ] ; then # If not already set in config file
     # Specify the default wording for the bot's custom message.
-    MESSAGE_CONTENT="A new Minecraft $VERB is available! | Release: $MANIFEST_VERSION_RELEASE | Snapshot: $MANIFEST_VERSION_SNAPSHOT"
+    # MESSAGE_CONTENT="Ein(e) neue(r) $VERB ist verfügbar! | Release: $MANIFEST_VERSION_RELEASE | Snapshot: $MANIFEST_VERSION_SNAPSHOT"
+    
+    # Grammatik ist schwer:
+    
+    if [ "$VERB" = "**snapshot**" ] ; then
+    
+    	MESSAGE_CONTENT="Ein neuer **Snapshot** ist verfügbar! | Release: $MANIFEST_VERSION_RELEASE | Snapshot: $MANIFEST_VERSION_SNAPSHOT"
+    
+    elif [ "$VERB" = "**release**" ] ; then
+    
+    	MESSAGE_CONTENT="Eine neue **Vollversion** ist verfügbar! | Release: $MANIFEST_VERSION_RELEASE | Snapshot: $MANIFEST_VERSION_SNAPSHOT"
+    
+    else
+    	
+        MESSAGE_CONTENT="Ein(e) neue(r) $VERB ist verfügbar! | Release: $MANIFEST_VERSION_RELEASE | Snapshot: $MANIFEST_VERSION_SNAPSHOT"
+        
+    fi
   else
     source $CONFIG_FILE # Freshen the MESSAGE_CONTENT now that other vars are populated
   fi
