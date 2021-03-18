@@ -1,6 +1,10 @@
 Dieser Fork ist eine deutsche Übersetzung.
 
-MESSAGE_CONTENT in der Config-Datei wird aktuell1 ignoriert!
+MESSAGE_CONTENT in der Config-Datei wird aktuell ignoriert!
+
+This Fork is a german translation.
+
+MESSAGE_CONTENT in the config file is currently ignored.
 
 # discord_minecraft_release_bot
 A Discord Bot which checks for whether a new Minecraft release or snapshot has been released and makes a post via Discord Webhook.
